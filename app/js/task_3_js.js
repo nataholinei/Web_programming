@@ -1,410 +1,384 @@
-// Відображення повідомлення
+// Р’С–РґРѕР±СЂР°Р¶РµРЅРЅСЏ РїРѕРІС–РґРѕРјР»РµРЅРЅСЏ
 function btn_1_press() {
-    alert(`Ви натиснули кнопку №1`);
+  alert(`Р’Рё РЅР°С‚РёСЃРЅСѓР»Рё РєРЅРѕРїРєСѓ в„–1`);
 }
 
-// Відображення вікна підтвердження
+// Р’С–РґРѕР±СЂР°Р¶РµРЅРЅСЏ РІС–РєРЅР° РїС–РґС‚РІРµСЂРґР¶РµРЅРЅСЏ
 function btn_2_press() {
-    let res = confirm(`Ви любите морозиво?`);
-    let like = "";
-    if (!res) { like = "не "; }
-    alert(`Користувач який натиснув кнопку №2 ${like}любить морозиво`);
+  let res = confirm(`Р’Рё Р»СЋР±РёС‚Рµ РјРѕСЂРѕР·РёРІРѕ?`);
+  let like = "";
+  if (!res) { like = "РЅРµ "; }
+  alert(`РљРѕСЂРёСЃС‚СѓРІР°С‡ СЏРєРёР№ РЅР°С‚РёСЃРЅСѓРІ РєРЅРѕРїРєСѓ в„–2 ${like}Р»СЋР±РёС‚СЊ РјРѕСЂРѕР·РёРІРѕ`);
 }
 
-// Відображеня поля введення
+// Р’С–РґРѕР±СЂР°Р¶РµРЅСЏ РїРѕР»СЏ РІРІРµРґРµРЅРЅСЏ
 function btn_3_press() {
-    let name = prompt(`Як вас звати?`);
-    if (name) { name = name.trim(); }
-    if (!name) { name = "незнайомцю"; }
-    alert(`Привіт, ${name}!`);
+  let name = prompt(`РЇРє РІР°СЃ Р·РІР°С‚Рё?`);
+  if (name)  { name = name.trim();  }
+  if (!name) { name = "РЅРµР·РЅР°Р№РѕРјС†СЋ"; }
+  alert(`РџСЂРёРІС–С‚, ${name}!`);
 }
 
-// Очищення поля введення
+// РћС‡РёС‰РµРЅРЅСЏ РїРѕР»СЏ РІРІРµРґРµРЅРЅСЏ
 function clear_spec_field_1() {
-    document.getElementById("spec_field_1").value = "";
+  document.getElementById("spec_field_1").value = "";
 }
 
-// Очищення поля введення
+// РћС‡РёС‰РµРЅРЅСЏ РїРѕР»СЏ РІРІРµРґРµРЅРЅСЏ
 function clear_spec_field_2() {
-    document.getElementById("spec_field_2").value = "";
+  document.getElementById("spec_field_2").value = "";
 }
 
-// Переведення введеного тексту у верхній регістр
-function only_big_letter(element) {
-    element.value = element.value.toUpperCase();
+// РџРµСЂРµРІРµРґРµРЅРЅСЏ РІРІРµРґРµРЅРѕРіРѕ С‚РµРєСЃС‚Сѓ Сѓ РІРµСЂС…РЅС–Р№ СЂРµРіС–СЃС‚СЂ
+function only_big_letter (element) {
+  element.value = element.value.toUpperCase();
 }
 
-// Переведення введеного тексту у нижній регістр 
-function only_small_letter(element) {
-    element.value = element.value.toLowerCase();
+// РџРµСЂРµРІРµРґРµРЅРЅСЏ РІРІРµРґРµРЅРѕРіРѕ С‚РµРєСЃС‚Сѓ Сѓ РЅРёР¶РЅС–Р№ СЂРµРіС–СЃС‚СЂ 
+function only_small_letter (element) {
+  element.value = element.value.toLowerCase();
 }
 
-// Перевірка правильності заповнення форм вводу
+// РџРµСЂРµРІС–СЂРєР° РїСЂР°РІРёР»СЊРЅРѕСЃС‚С– Р·Р°РїРѕРІРЅРµРЅРЅСЏ С„РѕСЂРј РІРІРѕРґСѓ
 function btn_register_press() {
-    // Шукаємо поля вводу по їх id
-    let login = document.getElementById("login");
-    let pass_a = document.getElementById("password_a");
-    let pass_b = document.getElementById("password_b");
-    // Отримуємо значення полів вводу
-    let text_log = login.value;
-    let text_pas_a = pass_a.value;
-    let text_pas_b = pass_b.value;
-    // Перевірка заповнення поля #login
-    if (!text_log) {
-        alert("Ви не ввели логін!");
-        return;
-    }
-    // Перевірка правильності заповнення поля #login
-    text_log = text_log.trim();
-    if (!text_log) {
-        alert("Ви ввели некоректний логін!");
-        return;
-    }
-    // Перевірка заповнення поля #password_a
-    if (!text_pas_a) {
-        alert("Ви не ввели пароль!");
-        return;
-    }
-    // Перевірка довжини паролю
-    if (text_pas_a.length < 6) {
-        alert("Ви ввели закороткий пароль!" + "\n" +
-            "Мінімальна довжина паролю - 6 символів");
-        return;
-    }
-    // Перевірка заповнення поля #password_b
-    if (!text_pas_b) {
-        alert("Ви не повторили пароль!");
-        return;
-    }
-    // Перевірка ідентичності паролів
-    if (text_pas_a !== text_pas_b) {
-        alert("Паролі не збігаються!");
-        return;
-    }
-    // Повідомлення про успішну реєстрацію
-    alert("Реєстрація завершилася успішно");
+  // РЁСѓРєР°С”РјРѕ РїРѕР»СЏ РІРІРѕРґСѓ РїРѕ С—С… id
+  let login  = document.getElementById("login");
+  let pass_a = document.getElementById("password_a");
+  let pass_b = document.getElementById("password_b");
+  // РћС‚СЂРёРјСѓС”РјРѕ Р·РЅР°С‡РµРЅРЅСЏ РїРѕР»С–РІ РІРІРѕРґСѓ
+  let text_log   = login.value;
+  let text_pas_a = pass_a.value;
+  let text_pas_b = pass_b.value;
+  // РџРµСЂРµРІС–СЂРєР° Р·Р°РїРѕРІРЅРµРЅРЅСЏ РїРѕР»СЏ #login
+  if (!text_log) { alert("Р’Рё РЅРµ РІРІРµР»Рё Р»РѕРіС–РЅ!");
+                   return; }
+  // РџРµСЂРµРІС–СЂРєР° РїСЂР°РІРёР»СЊРЅРѕСЃС‚С– Р·Р°РїРѕРІРЅРµРЅРЅСЏ РїРѕР»СЏ #login
+  text_log = text_log.trim();
+  if (!text_log) { alert("Р’Рё РІРІРµР»Рё РЅРµРєРѕСЂРµРєС‚РЅРёР№ Р»РѕРіС–РЅ!");
+                   return; }
+  // РџРµСЂРµРІС–СЂРєР° Р·Р°РїРѕРІРЅРµРЅРЅСЏ РїРѕР»СЏ #password_a
+  if (!text_pas_a) { alert("Р’Рё РЅРµ РІРІРµР»Рё РїР°СЂРѕР»СЊ!");
+                     return; }
+  // РџРµСЂРµРІС–СЂРєР° РґРѕРІР¶РёРЅРё РїР°СЂРѕР»СЋ
+  if (text_pas_a.length < 6) { alert("Р’Рё РІРІРµР»Рё Р·Р°РєРѕСЂРѕС‚РєРёР№ РїР°СЂРѕР»СЊ!" + "\n" +
+                                     "РњС–РЅС–РјР°Р»СЊРЅР° РґРѕРІР¶РёРЅР° РїР°СЂРѕР»СЋ - 6 СЃРёРјРІРѕР»С–РІ");
+                               return; }
+  // РџРµСЂРµРІС–СЂРєР° Р·Р°РїРѕРІРЅРµРЅРЅСЏ РїРѕР»СЏ #password_b
+  if (!text_pas_b) { alert("Р’Рё РЅРµ РїРѕРІС‚РѕСЂРёР»Рё РїР°СЂРѕР»СЊ!");
+                     return; }
+  // РџРµСЂРµРІС–СЂРєР° С–РґРµРЅС‚РёС‡РЅРѕСЃС‚С– РїР°СЂРѕР»С–РІ
+  if (text_pas_a !== text_pas_b) { alert("РџР°СЂРѕР»С– РЅРµ Р·Р±С–РіР°СЋС‚СЊСЃСЏ!");
+                                   return; }
+  // РџРѕРІС–РґРѕРјР»РµРЅРЅСЏ РїСЂРѕ СѓСЃРїС–С€РЅСѓ СЂРµС”СЃС‚СЂР°С†С–СЋ
+  alert("Р РµС”СЃС‚СЂР°С†С–СЏ Р·Р°РІРµСЂС€РёР»Р°СЃСЏ СѓСЃРїС–С€РЅРѕ");
 }
 
 // .......................................................................
 
-// Необхідні змінні
+// РќРµРѕР±С…С–РґРЅС– Р·РјС–РЅРЅС–
 let added_elements = 1;
 
-// Додавання нового елементу до списку
+// Р”РѕРґР°РІР°РЅРЅСЏ РЅРѕРІРѕРіРѕ РµР»РµРјРµРЅС‚Сѓ РґРѕ СЃРїРёСЃРєСѓ
 function add_li() {
-    // Пошук списку за id
-    let ul = document.getElementById("editable_list");
-    // Створення нового елементу <li>
-    let li = document.createElement("li");
-    // Створення тексту для елементу <li>
-    let text = document.createTextNode(`Новий елемент списку №${added_elements}`);
-    // Збільшуємо лічильник на 1
-    added_elements++;
-    // Додаємо текст до елемента <li>
-    li.appendChild(text);
-    // Додаємо елемент <li> до списку
-    ul.appendChild(li);
+  // РџРѕС€СѓРє СЃРїРёСЃРєСѓ Р·Р° id
+  let ul = document.getElementById("editable_list");
+  // РЎС‚РІРѕСЂРµРЅРЅСЏ РЅРѕРІРѕРіРѕ РµР»РµРјРµРЅС‚Сѓ <li>
+  let li = document.createElement("li");
+  // РЎС‚РІРѕСЂРµРЅРЅСЏ С‚РµРєСЃС‚Сѓ РґР»СЏ РµР»РµРјРµРЅС‚Сѓ <li>
+  let text = document.createTextNode(`РќРѕРІРёР№ РµР»РµРјРµРЅС‚ СЃРїРёСЃРєСѓ в„–${added_elements}`);
+  // Р—Р±С–Р»СЊС€СѓС”РјРѕ Р»С–С‡РёР»СЊРЅРёРє РЅР° 1
+  added_elements++;
+  // Р”РѕРґР°С”РјРѕ С‚РµРєСЃС‚ РґРѕ РµР»РµРјРµРЅС‚Р° <li>
+  li.appendChild(text);
+  // Р”РѕРґР°С”РјРѕ РµР»РµРјРµРЅС‚ <li> РґРѕ СЃРїРёСЃРєСѓ
+  ul.appendChild(li);
 }
 
-// Видалення останнього елементу зі списку
+// Р’РёРґР°Р»РµРЅРЅСЏ РѕСЃС‚Р°РЅРЅСЊРѕРіРѕ РµР»РµРјРµРЅС‚Сѓ Р·С– СЃРїРёСЃРєСѓ
 function remove_li() {
-    // Пошук списку за id
-    let ul = document.getElementById("editable_list");
-    // Отримання останнього дочірнього елемента
-    let li = ul.lastChild;
-    // Видалення останнього дочірнього елемента
-    ul.removeChild(ul.lastChild);
+  // РџРѕС€СѓРє СЃРїРёСЃРєСѓ Р·Р° id
+  let ul = document.getElementById("editable_list");
+  // РћС‚СЂРёРјР°РЅРЅСЏ РѕСЃС‚Р°РЅРЅСЊРѕРіРѕ РґРѕС‡С–СЂРЅСЊРѕРіРѕ РµР»РµРјРµРЅС‚Р°
+  let li = ul.lastChild;
+  // Р’РёРґР°Р»РµРЅРЅСЏ РѕСЃС‚Р°РЅРЅСЊРѕРіРѕ РґРѕС‡С–СЂРЅСЊРѕРіРѕ РµР»РµРјРµРЅС‚Р°
+  ul.removeChild(ul.lastChild);
 }
 
 // .......................................................................
 
-// Прослуховування кнопок управління блоком #flex_block
+// РџСЂРѕСЃР»СѓС…РѕРІСѓРІР°РЅРЅСЏ РєРЅРѕРїРѕРє СѓРїСЂР°РІР»С–РЅРЅСЏ Р±Р»РѕРєРѕРј #flex_block
 function add_flex_button_listener() {
-    // Шукаємо кнопки по їх id
-    let direction = document.getElementById("flex_direction");
-    let justify = document.getElementById("justify-content");
-    let align = document.getElementById("align-items");
-    // Додаємо прослуховування події <onclick>
-    direction.onclick = change_flex_direction;
-    justify.onclick = change_justify_content;
-    align.onclick = change_align_items;
+  // РЁСѓРєР°С”РјРѕ РєРЅРѕРїРєРё РїРѕ С—С… id
+  let direction = document.getElementById("flex_direction");
+  let justify   = document.getElementById("justify-content");
+  let align     = document.getElementById("align-items");
+  // Р”РѕРґР°С”РјРѕ РїСЂРѕСЃР»СѓС…РѕРІСѓРІР°РЅРЅСЏ РїРѕРґС–С— <onclick>
+  direction.onclick = change_flex_direction;
+  justify.onclick   = change_justify_content;
+  align.onclick     = change_align_items;
 }
 
 // .......................................................................
 
-// Необхідні змінні
+// РќРµРѕР±С…С–РґРЅС– Р·РјС–РЅРЅС–
 let flex_direction_id = 0;
-let flex_direction = ["row",
-    "row-reverse",
-    "column",
-    "column-reverse"];
+let flex_direction = [ "row",
+                       "row-reverse",
+                       "column",
+                       "column-reverse" ];
 
-// Зміна властивості <flex-direction>
-function change_flex_direction(event) {
-    // Шукаємо блок по id
-    let block = document.getElementById("flex_block");
-    // Збільшуємо лічильник
-    flex_direction_id += flex_direction_id < 3 ? 1 : -3;
-    // Отримуємо нове значення властивості
-    let value = flex_direction[flex_direction_id];
-    // Змінюємо властивість <flex-direction> 
-    block.style.flexDirection = value;
-    // Змінюємо текст кнопки
-    event.target.innerHTML = `flex_direction: ${value}`;
+// Р—РјС–РЅР° РІР»Р°СЃС‚РёРІРѕСЃС‚С– <flex-direction>
+function change_flex_direction (event) {
+  // РЁСѓРєР°С”РјРѕ Р±Р»РѕРє РїРѕ id
+  let block = document.getElementById("flex_block");
+  // Р—Р±С–Р»СЊС€СѓС”РјРѕ Р»С–С‡РёР»СЊРЅРёРє
+  flex_direction_id += flex_direction_id < 3 ? 1 : -3;
+  // РћС‚СЂРёРјСѓС”РјРѕ РЅРѕРІРµ Р·РЅР°С‡РµРЅРЅСЏ РІР»Р°СЃС‚РёРІРѕСЃС‚С–
+  let value = flex_direction[flex_direction_id];
+  // Р—РјС–РЅСЋС”РјРѕ РІР»Р°СЃС‚РёРІС–СЃС‚СЊ <flex-direction> 
+  block.style.flexDirection = value;
+  // Р—РјС–РЅСЋС”РјРѕ С‚РµРєСЃС‚ РєРЅРѕРїРєРё
+  event.target.innerHTML = `flex_direction: ${value}`;
 }
 
 // .......................................................................
 
-// Необхідні змінні
+// РќРµРѕР±С…С–РґРЅС– Р·РјС–РЅРЅС–
 let justify_content_id = 3;
-let justify_content = ["center",
-    "flex-start",
-    "flex-end",
-    "space-around",
-    "space-between"];
+let justify_content = [ "center",
+                        "flex-start",
+                        "flex-end",
+                        "space-around",
+                        "space-between" ];
 
-// Зміна властивості <justify-content>
-function change_justify_content(event) {
-    // Шукаємо блок по id
-    let block = document.getElementById("flex_block");
-    // Збільшуємо лічильник
-    justify_content_id += justify_content_id < 4 ? 1 : -4;
-    // Отримуємо нове значення властивості
-    let value = justify_content[justify_content_id];
-    // Змінюємо властивість <justify-content> 
-    block.style.justifyContent = value;
-    // Змінюємо текст кнопки
-    event.target.innerHTML = `justify_content: ${value}`;
+// Р—РјС–РЅР° РІР»Р°СЃС‚РёРІРѕСЃС‚С– <justify-content>
+function change_justify_content (event) {
+  // РЁСѓРєР°С”РјРѕ Р±Р»РѕРє РїРѕ id
+  let block = document.getElementById("flex_block");
+  // Р—Р±С–Р»СЊС€СѓС”РјРѕ Р»С–С‡РёР»СЊРЅРёРє
+  justify_content_id += justify_content_id < 4 ? 1 : -4;
+  // РћС‚СЂРёРјСѓС”РјРѕ РЅРѕРІРµ Р·РЅР°С‡РµРЅРЅСЏ РІР»Р°СЃС‚РёРІРѕСЃС‚С–
+  let value = justify_content[justify_content_id];
+  // Р—РјС–РЅСЋС”РјРѕ РІР»Р°СЃС‚РёРІС–СЃС‚СЊ <justify-content> 
+  block.style.justifyContent = value;
+  // Р—РјС–РЅСЋС”РјРѕ С‚РµРєСЃС‚ РєРЅРѕРїРєРё
+  event.target.innerHTML = `justify_content: ${value}`;
 }
 
 // .......................................................................
 
-// Необхідні змінні
+// РќРµРѕР±С…С–РґРЅС– Р·РјС–РЅРЅС–
 let align_items_id = 0;
-let align_items = ["center",
-    "baseline",
-    "flex-start",
-    "flex-end",
-    "stretch"];
+let align_items = [ "center",
+                    "baseline",
+                    "flex-start",
+                    "flex-end",
+                    "stretch" ];
 
-// Зміна властивості <align_items>
-function change_align_items(event) {
-    // Шукаємо блок по id
-    let block = document.getElementById("flex_block");
-    // Збільшуємо лічильник
-    align_items_id += align_items_id < 4 ? 1 : -4;
-    // Отримуємо нове значення властивості
-    let value = align_items[align_items_id];
-    // Змінюємо властивість <align_items> 
-    block.style.alignItems = value;
-    // Змінюємо текст кнопки
-    event.target.innerHTML = `align_items: ${value}`;
+// Р—РјС–РЅР° РІР»Р°СЃС‚РёРІРѕСЃС‚С– <align_items>
+function change_align_items (event) {
+  // РЁСѓРєР°С”РјРѕ Р±Р»РѕРє РїРѕ id
+  let block = document.getElementById("flex_block");
+  // Р—Р±С–Р»СЊС€СѓС”РјРѕ Р»С–С‡РёР»СЊРЅРёРє
+  align_items_id += align_items_id < 4 ? 1 : -4;
+  // РћС‚СЂРёРјСѓС”РјРѕ РЅРѕРІРµ Р·РЅР°С‡РµРЅРЅСЏ РІР»Р°СЃС‚РёРІРѕСЃС‚С–
+  let value = align_items[align_items_id];
+  // Р—РјС–РЅСЋС”РјРѕ РІР»Р°СЃС‚РёРІС–СЃС‚СЊ <align_items> 
+  block.style.alignItems = value;
+  // Р—РјС–РЅСЋС”РјРѕ С‚РµРєСЃС‚ РєРЅРѕРїРєРё
+  event.target.innerHTML = `align_items: ${value}`;
 }
 
 // .......................................................................
 
-// Необхідні змінні
+// РќРµРѕР±С…С–РґРЅС– Р·РјС–РЅРЅС–
 let title_color_id = 1;
-let title_colors = ["#F00",
-    "#0F0",
-    "#00F",
-    "#FF0",
-    "#F0F",
-    "#0FF"];
+let title_colors = [ "#F00",
+                     "#0F0",
+                     "#00F",
+                     "#FF0",
+                     "#F0F",
+                     "#0FF" ];
 
-// Зміна кольору фону заголовку
+// Р—РјС–РЅР° РєРѕР»СЊРѕСЂСѓ С„РѕРЅСѓ Р·Р°РіРѕР»РѕРІРєСѓ
 function change_title_background() {
-    // Допоміжна константа
-    const colors = title_colors.length - 1;
-    // Шукаємо елемент по id
-    let title = document.getElementById("title");
-    // Змінюємо колір рамки
-    title.style.borderColor = title_colors[title_color_id];
-    // Допоміжна змінна
-    let alpha_color = title_colors[title_color_id] + "5";
-    // Змінюємо колір фону
-    title.style.backgroundColor = alpha_color;
-    // Збільшуємо лічильник
-    title_color_id += (title_color_id < colors) ? 1 : -colors;
+  // Р”РѕРїРѕРјС–Р¶РЅР° РєРѕРЅСЃС‚Р°РЅС‚Р°
+  const colors = title_colors.length - 1;
+  // РЁСѓРєР°С”РјРѕ РµР»РµРјРµРЅС‚ РїРѕ id
+  let title = document.getElementById("title");
+  // Р—РјС–РЅСЋС”РјРѕ РєРѕР»С–СЂ СЂР°РјРєРё
+  title.style.borderColor = title_colors[title_color_id];
+  // Р”РѕРїРѕРјС–Р¶РЅР° Р·РјС–РЅРЅР°
+  let alpha_color = title_colors[title_color_id] + "5";
+  // Р—РјС–РЅСЋС”РјРѕ РєРѕР»С–СЂ С„РѕРЅСѓ
+  title.style.backgroundColor = alpha_color;
+  // Р—Р±С–Р»СЊС€СѓС”РјРѕ Р»С–С‡РёР»СЊРЅРёРє
+  title_color_id += (title_color_id < colors) ? 1 : -colors;  
 }
 
 // .......................................................................
 
-// Позначаємо елементи, які задовільняють умову №1
+// РџРѕР·РЅР°С‡Р°С”РјРѕ РµР»РµРјРµРЅС‚Рё, СЏРєС– Р·Р°РґРѕРІС–Р»СЊРЅСЏСЋС‚СЊ СѓРјРѕРІСѓ в„–1
 function check_condition_1() {
-    select_elements($("input.test_b"));
+  select_elements($("input.test_b"));
 }
 
-// Позначаємо елементи, які задовільняють умову №2
+// РџРѕР·РЅР°С‡Р°С”РјРѕ РµР»РµРјРµРЅС‚Рё, СЏРєС– Р·Р°РґРѕРІС–Р»СЊРЅСЏСЋС‚СЊ СѓРјРѕРІСѓ в„–2
 function check_condition_2() {
-    select_elements($("#cb3, #cb7"));
+  select_elements($("#cb3, #cb7"));
 }
 
-// Позначаємо елементи, які задовільняють умову №3
+// РџРѕР·РЅР°С‡Р°С”РјРѕ РµР»РµРјРµРЅС‚Рё, СЏРєС– Р·Р°РґРѕРІС–Р»СЊРЅСЏСЋС‚СЊ СѓРјРѕРІСѓ в„–3
 function check_condition_3() {
-    select_elements($("#div_4 input[type='checkbox']")
-        .not(".test_z"));
+  select_elements($("#div_4 input[type='checkbox']")
+                 .not(".test_z"));
 }
 
-// Позначаємо елементи, які задовільняють умову №4
+// РџРѕР·РЅР°С‡Р°С”РјРѕ РµР»РµРјРµРЅС‚Рё, СЏРєС– Р·Р°РґРѕРІС–Р»СЊРЅСЏСЋС‚СЊ СѓРјРѕРІСѓ в„–4
 function check_condition_4() {
-    // Знімаємо позначки з усіх елементів
-    unselect_all_elements();
-    // Результат пошуку
-    let result = $("[custom_atr]");
-    // Допоміжний масив
-    let array = [];
-    // Перебираємо знайдені елементи
-    for (let z = 0; z < result.length; z++) {
-        // Отримуємо елемент
-        let element = result.get(z);
-        // Отримуємо значення атрибуту
-        let atr = Number($(element).attr("custom_atr"));
-        // Виконуємо перевірку значення атрибуту
-        if (atr >= 25) { $(element).prop('checked', true); }
-    }
+  // Р—РЅС–РјР°С”РјРѕ РїРѕР·РЅР°С‡РєРё Р· СѓСЃС–С… РµР»РµРјРµРЅС‚С–РІ
+  unselect_all_elements();
+  // Р РµР·СѓР»СЊС‚Р°С‚ РїРѕС€СѓРєСѓ
+  let result = $("[custom_atr]");
+  // Р”РѕРїРѕРјС–Р¶РЅРёР№ РјР°СЃРёРІ
+  let array = [];
+  // РџРµСЂРµР±РёСЂР°С”РјРѕ Р·РЅР°Р№РґРµРЅС– РµР»РµРјРµРЅС‚Рё
+  for (let z = 0; z < result.length; z++) {
+    // РћС‚СЂРёРјСѓС”РјРѕ РµР»РµРјРµРЅС‚
+    let element = result.get(z);
+    // РћС‚СЂРёРјСѓС”РјРѕ Р·РЅР°С‡РµРЅРЅСЏ Р°С‚СЂРёР±СѓС‚Сѓ
+    let atr = Number($(element).attr("custom_atr"));
+    // Р’РёРєРѕРЅСѓС”РјРѕ РїРµСЂРµРІС–СЂРєСѓ Р·РЅР°С‡РµРЅРЅСЏ Р°С‚СЂРёР±СѓС‚Сѓ
+    if (atr >= 25) { $(element).prop('checked', true); }
+  }
 }
 
 // .......................................................................
 
-// Позначаємо необхідні елементи
-function select_elements(elements) {
-    // Знімаємо позначки з усіх елементів
-    unselect_all_elements();
-    // Позначаємо необхідні елементи  
-    for (let z = 0; z < elements.length; z++) {
-        let element = elements.get(z);
-        $(element).prop('checked', true);
-    }
+// РџРѕР·РЅР°С‡Р°С”РјРѕ РЅРµРѕР±С…С–РґРЅС– РµР»РµРјРµРЅС‚Рё
+function select_elements (elements) {
+  // Р—РЅС–РјР°С”РјРѕ РїРѕР·РЅР°С‡РєРё Р· СѓСЃС–С… РµР»РµРјРµРЅС‚С–РІ
+  unselect_all_elements();
+  // РџРѕР·РЅР°С‡Р°С”РјРѕ РЅРµРѕР±С…С–РґРЅС– РµР»РµРјРµРЅС‚Рё  
+  for (let z = 0; z < elements.length; z++) {
+    let element = elements.get(z);
+    $(element).prop('checked', true);
+  }
 }
 
-// Знімаємо позначки з усіх елементів
+// Р—РЅС–РјР°С”РјРѕ РїРѕР·РЅР°С‡РєРё Р· СѓСЃС–С… РµР»РµРјРµРЅС‚С–РІ
 function unselect_all_elements() {
-    // Отримуємо усі елементи типу <checkbox>
-    let result = $("#div_4 input[type='checkbox']");
-    // Знімаємо позначки з усіх елементів
-    for (let z = 0; z < result.length; z++) {
-        let element = result.get(z);
-        $(element).prop('checked', false);
-    }
+  // РћС‚СЂРёРјСѓС”РјРѕ СѓСЃС– РµР»РµРјРµРЅС‚Рё С‚РёРїСѓ <checkbox>
+  let result = $("#div_4 input[type='checkbox']");
+  // Р—РЅС–РјР°С”РјРѕ РїРѕР·РЅР°С‡РєРё Р· СѓСЃС–С… РµР»РµРјРµРЅС‚С–РІ
+  for (let z = 0; z < result.length; z++) {
+    let element = result.get(z);
+    $(element).prop('checked', false);
+  }
 }
 
 // .......................................................................
 
-// Додаємо прослуховувачі подій до кнопок
+// Р”РѕРґР°С”РјРѕ РїСЂРѕСЃР»СѓС…РѕРІСѓРІР°С‡С– РїРѕРґС–Р№ РґРѕ РєРЅРѕРїРѕРє
 function add_animation_button_listener() {
-    // Кнопка "Запустити таймер"
-    $("#btn_timer").bind("click", start_timer);
-    // Кнопка "Запустити інтервал"
-    $("#btn_interval").bind("click", start_interval);
+  // РљРЅРѕРїРєР° "Р—Р°РїСѓСЃС‚РёС‚Рё С‚Р°Р№РјРµСЂ"
+  $("#btn_timer").bind("click", start_timer);
+  // РљРЅРѕРїРєР° "Р—Р°РїСѓСЃС‚РёС‚Рё С–РЅС‚РµСЂРІР°Р»"
+  $("#btn_interval").bind("click", start_interval);
 }
 
 // .......................................................................
 
-// Запускаємо таймер
+// Р—Р°РїСѓСЃРєР°С”РјРѕ С‚Р°Р№РјРµСЂ
 function start_timer() {
-    // Змінюємо текст кнопки
-    $("#btn_timer").attr("value", "Анімація запуститься через 3 сек.");
-    // Запускаємо таймер
-    setTimeout(() => {
-        // Змінюємо текст кнопки
-        $("#btn_timer").attr("value", "Запустити таймер");
-        // Запускаємо анімацію
-        start_animation();
-    }, 3000);
+  // Р—РјС–РЅСЋС”РјРѕ С‚РµРєСЃС‚ РєРЅРѕРїРєРё
+  $("#btn_timer").attr("value", "РђРЅС–РјР°С†С–СЏ Р·Р°РїСѓСЃС‚РёС‚СЊСЃСЏ С‡РµСЂРµР· 3 СЃРµРє.");
+  // Р—Р°РїСѓСЃРєР°С”РјРѕ С‚Р°Р№РјРµСЂ
+  setTimeout(() => {
+    // Р—РјС–РЅСЋС”РјРѕ С‚РµРєСЃС‚ РєРЅРѕРїРєРё
+    $("#btn_timer").attr("value", "Р—Р°РїСѓСЃС‚РёС‚Рё С‚Р°Р№РјРµСЂ");
+    // Р—Р°РїСѓСЃРєР°С”РјРѕ Р°РЅС–РјР°С†С–СЋ
+    start_animation();
+  }, 3000);
 }
 
 // .......................................................................
 
 let intervar_run = false;
 
-// Запускаємо або зупиняємо інтервал
+// Р—Р°РїСѓСЃРєР°С”РјРѕ Р°Р±Рѕ Р·СѓРїРёРЅСЏС”РјРѕ С–РЅС‚РµСЂРІР°Р»
 function start_interval() {
-    // Зупиняємо інтервал
-    if (intervar_run) {
-        intervar_run = false;
-        $("#btn_interval").attr("value", "Запустити інтервал");
-        return;
-    }
-    // Запускаємо інтервал
-    else {
-        intervar_run = true;
-        $("#btn_interval").attr("value", "Зупинити інтервал");
-    }
-    // Задаємо інтервал
-    let interval = setInterval(() => {
-        // Запускаємо анімацію
-        start_animation();
-        // Якщо інтервал зупинено - очищуємо його
-        if (!intervar_run) { clearInterval(interval); }
-    }, 3000);
+  // Р—СѓРїРёРЅСЏС”РјРѕ С–РЅС‚РµСЂРІР°Р»
+  if (intervar_run) {
+    intervar_run = false;
+    $("#btn_interval").attr("value", "Р—Р°РїСѓСЃС‚РёС‚Рё С–РЅС‚РµСЂРІР°Р»");
+    return;
+  }
+  // Р—Р°РїСѓСЃРєР°С”РјРѕ С–РЅС‚РµСЂРІР°Р»
+  else {
+    intervar_run = true;
+    $("#btn_interval").attr("value", "Р—СѓРїРёРЅРёС‚Рё С–РЅС‚РµСЂРІР°Р»");
+  }
+  // Р—Р°РґР°С”РјРѕ С–РЅС‚РµСЂРІР°Р»
+  let interval = setInterval(() => {
+    // Р—Р°РїСѓСЃРєР°С”РјРѕ Р°РЅС–РјР°С†С–СЋ
+    start_animation();
+    // РЇРєС‰Рѕ С–РЅС‚РµСЂРІР°Р» Р·СѓРїРёРЅРµРЅРѕ - РѕС‡РёС‰СѓС”РјРѕ Р№РѕРіРѕ
+    if (!intervar_run) { clearInterval(interval); }
+  }, 3000);
 }
 
 // .......................................................................
 
-// Необхідні змінні
+// РќРµРѕР±С…С–РґРЅС– Р·РјС–РЅРЅС–
 let animation_id = 0;
 
-// Запускаємо анімацію
+// Р—Р°РїСѓСЃРєР°С”РјРѕ Р°РЅС–РјР°С†С–СЋ
 function start_animation() {
-    // Виводимо інформаційне повідомлення
-    console.log(`Start animation №${animation_id}`);
-    // Анімуємо об'єкт
-    switch (animation_id) {
-        // Анімація №1
-        case 0: $("#img").animate({
-            opacity: 0.0,
-            left: '-39%',
-            top: '25%'
-        }, 500)
-            .animate({
-                opacity: 1.0,
-                top: '-25%'
-            }, 500);
+  // Р’РёРІРѕРґРёРјРѕ С–РЅС„РѕСЂРјР°С†С–Р№РЅРµ РїРѕРІС–РґРѕРјР»РµРЅРЅСЏ
+  console.log(`Start animation в„–${animation_id}`);
+  // РђРЅС–РјСѓС”РјРѕ РѕР±'С”РєС‚
+  switch (animation_id) {
+    // РђРЅС–РјР°С†С–СЏ в„–1
+    case 0: $("#img").animate({ opacity: 0.0,
+                                left:    '-39%',
+                                top:     '25%' }, 500)
+                     .animate({ opacity: 1.0,
+                                top:     '-25%' }, 500);
             break;
-        // Анімація №2
-        case 1: $("#img").animate({
-            opacity: 0.0,
-            left: '0%',
-            top: '0%',
-            width: '40%'
-        }, 500);
+    // РђРЅС–РјР°С†С–СЏ в„–2
+    case 1: $("#img").animate({ opacity: 0.0,
+                                left:    '0%',
+                                top:     '0%',
+                                width:   '40%' }, 500);
             break;
-        // Анімація №3
-        case 2: $("#img").animate({
-            opacity: 1.0,
-            width: '128px'
-        }, 500);
+    // РђРЅС–РјР°С†С–СЏ в„–3
+    case 2: $("#img").animate({ opacity: 1.0,
+                                width:   '128px' }, 500);
             break;
-        // Анімація №4
-        case 3: $("#img").animate({
-            opacity: 0.0,
-            left: '40%',
-            width: '16px'
-        }, 500);
+    // РђРЅС–РјР°С†С–СЏ в„–4
+    case 3: $("#img").animate({ opacity: 0.0,
+                                left:    '40%',
+                                width:   '16px' }, 500);
             break;
-        // Анімація №5
-        case 4: $("#img").animate({
-            opacity: 0.5,
-            left: '-35%',
-            width: '128px'
-        }, 500)
-            .animate({
-                opacity: 1.0,
-                left: '0%',
-                width: '128px'
-            }, 500);
-            break;
-    }
-    // Збільшуємо індекс анімації
-    animation_id += animation_id < 4 ? 1 : -4;
+    // РђРЅС–РјР°С†С–СЏ в„–5
+    case 4: $("#img").animate({ opacity: 0.5,
+                                left:    '-35%',
+                                width:   '128px' }, 500)
+                     .animate({ opacity: 1.0,
+                                left:    '0%',
+                                width:   '128px' }, 500);
+    break;
+  }
+  // Р—Р±С–Р»СЊС€СѓС”РјРѕ С–РЅРґРµРєСЃ Р°РЅС–РјР°С†С–С—
+  animation_id += animation_id < 4 ? 1 : -4;
 }
 
 // .......................................................................
 
-// Додаємо прослуховувачі подій до кнопок
+// Р”РѕРґР°С”РјРѕ РїСЂРѕСЃР»СѓС…РѕРІСѓРІР°С‡С– РїРѕРґС–Р№ РґРѕ РєРЅРѕРїРѕРє
 add_flex_button_listener();
 add_animation_button_listener();
 
-// Змінюємо колір фону заголовку кожні 2 сек.
+// Р—РјС–РЅСЋС”РјРѕ РєРѕР»С–СЂ С„РѕРЅСѓ Р·Р°РіРѕР»РѕРІРєСѓ РєРѕР¶РЅС– 2 СЃРµРє.
 setInterval(change_title_background, 3000);
