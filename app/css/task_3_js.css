@@ -1,180 +1,181 @@
-/* Налаштування тегу <body> */
+/* РќР°Р»Р°С€С‚СѓРІР°РЅРЅСЏ С‚РµРіСѓ <body> */
 body {
-    margin: 0;
-    padding: 0;
-    font-size: 18px;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  box-sizing: border-box;
 }
 
-/* Звичайний блок */
+/* Р—РІРёС‡Р°Р№РЅРёР№ Р±Р»РѕРє */
 .block_n {
-    width: auto;
-    padding: 3px;
-    display: block;
-    margin: 2px 0 0 2px;
-    text-align: center;
-    border-style: solid;
-    border-color: #F00;
-    border-width: 2px;
-    box-sizing: inherit;
-    background-color: #F005;
+  width: auto;
+  padding: 3px;
+  display: block;
+  margin: 2px 0 0 2px;
+  text-align: center;
+  border-style: solid;
+  border-color: #F00;
+  border-width: 2px;
+  box-sizing: inherit;
+  background-color: #F005;
 }
 
-/* Кінцевий блок */
+/* РљС–РЅС†РµРІРёР№ Р±Р»РѕРє */
 .block_e {
-    width: auto;
-    padding: 3px;
-    display: block;
-    margin: 2px 2px 0;
-    text-align: center;
-    border-style: solid;
-    border-color: #F00;
-    border-width: 2px;
-    box-sizing: inherit;
-    background-color: #F005;
+  width: auto;
+  padding: 3px;
+  display: block;
+  margin: 2px 2px 0;
+  text-align: center;
+  border-style: solid;
+  border-color: #F00;
+  border-width: 2px;
+  box-sizing: inherit;
+  background-color: #F005;
 }
 
 input {
-    margin: 5px 0 0 5px;
+  margin: 5px 0 0 5px;
 }
 
-    button,
-    input[type="button"] {
-        margin: 5px 2px;
-        padding: 2px 5px;
-    }
+button,
+input[type="button"] {
+  margin: 5px 2px;
+  padding: 2px 5px;
+}
 
 hr {
-    margin: 3px;
-    padding: 0;
+  margin: 3px;
+  padding: 0;
 }
 
 .grid_2_column {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .grid_3_column {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 ul,
 ol {
-    text-align: left;
+  text-align: left;
 }
 
 #grid_1 {
-    grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 1fr 2fr 1fr;
 }
 
 #div_1 {
-    border-color: #0F0;
-    background-color: #0F05;
+  border-color: #0F0;
+  background-color: #0F05;
 }
 
 #div_2,
 #div_6 {
-    color: white;
-    border-color: #333;
-    background-color: #3338;
+  color: white;
+  border-color: #333;
+  background-color: #3338;
 }
 
 #div_3 {
-    border-color: #00F;
-    background-color: #00F5;
+  border-color: #00F;
+  background-color: #00F5;
 }
 
 #div_4 {
-    border-color: #F0F;
-    background-color: #F0F5;
+  border-color: #F0F;
+  background-color: #F0F5;
 }
 
-    #div_4 form {
-        text-align: left;
-    }
+#div_4 form {
+  text-align: left;
+}
 
 #div_5 {
-    border-color: #FF0;
-    background-color: #FF05;
+  border-color: #FF0;
+  background-color: #FF05;
 }
 
 #div_6 {
-    margin-bottom: 2px;
+  margin-bottom: 2px;
 }
 
-    #div_6 a,
-    #div_6 a:visited {
-        color: white;
-        font-size: 1.3em;
-        text-decoration: none;
-    }
+#div_6 a,
+#div_6 a:visited {
+  color: white;
+  font-size: 1.3em;
+  text-decoration: none;
+}
 
 #animation_block {
-    /* Тип відображення: flex */
-    display: flex;
-    /* Напрямок відображення: стовбець */
-    flex-flow: column;
-    /* Висота блоку: 100% висоти батьківського елемента */
-    height: 100%;
+  /* РўРёРї РІС–РґРѕР±СЂР°Р¶РµРЅРЅСЏ: flex */
+  display: flex;
+  /* РќР°РїСЂСЏРјРѕРє РІС–РґРѕР±СЂР°Р¶РµРЅРЅСЏ: СЃС‚РѕРІР±РµС†СЊ */
+  flex-flow: column;
+  /* Р’РёСЃРѕС‚Р° Р±Р»РѕРєСѓ: 100% РІРёСЃРѕС‚Рё Р±Р°С‚СЊРєС–РІСЃСЊРєРѕРіРѕ РµР»РµРјРµРЅС‚Р° */
+  height: 100%;
 }
 
 #animation_buttons {
-    /* Розмір елемента вираховується із його вмісту */
-    flex-grow: 0;
+  /* Р РѕР·РјС–СЂ РµР»РµРјРµРЅС‚Р° РІРёСЂР°С…РѕРІСѓС”С‚СЊСЃСЏ С–Р· Р№РѕРіРѕ РІРјС–СЃС‚Сѓ */
+  flex-grow: 0;
 }
 
 #animation_context {
-    /* Елемент заповнює весь доступний простір */
-    flex-grow: 1;
-    /* Тип відображення: flex */
-    display: flex;
-    /* Вертикальне вирівнювання: по центру */
-    align-items: center;
-    /* Горизонтальне вирівнювання: по центру */
-    justify-content: center;
-    /* Колір фону */
-    background-color: #00F5;
-    /* Колір рамки */
-    border-color: #00F;
+  /* Р•Р»РµРјРµРЅС‚ Р·Р°РїРѕРІРЅСЋС” РІРµСЃСЊ РґРѕСЃС‚СѓРїРЅРёР№ РїСЂРѕСЃС‚С–СЂ */
+  flex-grow: 1;
+  /* РўРёРї РІС–РґРѕР±СЂР°Р¶РµРЅРЅСЏ: flex */
+  display: flex;
+  /* Р’РµСЂС‚РёРєР°Р»СЊРЅРµ РІРёСЂС–РІРЅСЋРІР°РЅРЅСЏ: РїРѕ С†РµРЅС‚СЂСѓ */
+  align-items: center;
+  /* Р“РѕСЂРёР·РѕРЅС‚Р°Р»СЊРЅРµ РІРёСЂС–РІРЅСЋРІР°РЅРЅСЏ: РїРѕ С†РµРЅС‚СЂСѓ */
+  justify-content: center;
+  /* РљРѕР»С–СЂ С„РѕРЅСѓ */
+  background-color: #00F5;
+  /* РљРѕР»С–СЂ СЂР°РјРєРё */
+  border-color: #00F;
 }
 
 #img {
-    position: relative;
+  position: relative;
 }
 
 #flex_block {
-    /* Тип відображення: flex */
-    display: flex;
-    /* Вирівнювання вздовж головної осі */
-    align-items: center;
-    /* Переносити елементи вниз, якщл вони не поміщаються у блоці */
-    flex-wrap: wrap;
-    /* Напрямок розміщення елементів (головна вісь) */
-    flex-direction: row;
-    /* Відступи між елементами */
-    justify-content: space-around;
+  /* РўРёРї РІС–РґРѕР±СЂР°Р¶РµРЅРЅСЏ: flex */
+  display: flex;
+  /* Р’РёСЂС–РІРЅСЋРІР°РЅРЅСЏ РІР·РґРѕРІР¶ РіРѕР»РѕРІРЅРѕС— РѕСЃС– */
+  align-items: center;
+  /* РџРµСЂРµРЅРѕСЃРёС‚Рё РµР»РµРјРµРЅС‚Рё РІРЅРёР·, СЏРєС‰Р» РІРѕРЅРё РЅРµ РїРѕРјС–С‰Р°СЋС‚СЊСЃСЏ Сѓ Р±Р»РѕС†С– */
+  flex-wrap: wrap;
+  /* РќР°РїСЂСЏРјРѕРє СЂРѕР·РјС–С‰РµРЅРЅСЏ РµР»РµРјРµРЅС‚С–РІ (РіРѕР»РѕРІРЅР° РІС–СЃСЊ) */
+  flex-direction: row;
+  /* Р’С–РґСЃС‚СѓРїРё РјС–Р¶ РµР»РµРјРµРЅС‚Р°РјРё */
+  justify-content: space-around;
 }
 
-    #flex_block img {
-        display: block;
-        width: 48px;
-    }
+#flex_block img {
+  display: block;
+  width: 48px;
+}
 
-        #flex_block img[alt="im_2"],
-        #flex_block img[alt="im_4"],
-        #flex_block img[alt="im_6"],
-        #flex_block img[alt="im_8"] {
-            display: block;
-            width: 72px;
-        }
+#flex_block img[alt="im_2"],
+#flex_block img[alt="im_4"],
+#flex_block img[alt="im_6"],
+#flex_block img[alt="im_8"] {
+  display: block;
+  width: 72px;
+}
 
 #title {
-    color: black;
-    transition: border-color 2s, background-color 2s;
+  color: black;
+  transition: border-color 2s,
+    background-color 2s;
 }
 
 #title_text {
-    display: inline;
-    cursor: pointer;
+  display: inline;
+  cursor: pointer;
 }

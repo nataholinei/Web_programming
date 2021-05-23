@@ -103,7 +103,7 @@ function load_more_book(count) {
                 `<div class="col-md-6 col-lg-4">
                <div class="p-2 book" onclick="click_on_book(this)" data="${item_data[6]}">
                   <img src="../data/img/${item_data[6]}.png" class="w-100" alt="book">
-                  <div class="bg-primary text-center">${item_data[0]}</div>
+                  <div class="bg-ligth text-center">${item_data[0]}</div>
                </div>
             </div>`;
 
