@@ -19,12 +19,12 @@
    background-image: repeating-linear-gradient(45deg,
                                              #333333,
                                              #333333 20px,
-                                             #0d6efd 20px,
-                                             #0d6efd 40px);
+                                             #6c757d 20px,
+                                             #6c757d 40px);
  }
 
  /* Стилі скролбару для браузера Firefox */
 * {
-   scrollbar-color: #0d6efd #333333;
+   scrollbar-color: #6c757d #333333;
    scrollbar-width: auto;
 }
